@@ -2,6 +2,7 @@ import Foundation
 import XCTest
 import InputSources
 
+@MainActor
 final class InputSourceControllerTests: XCTestCase {
   enum InputSourceIdentifier: String {
     case abc = "com.apple.keylayout.ABC"

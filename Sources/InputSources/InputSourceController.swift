@@ -7,6 +7,7 @@ public enum InputSourceControllerError: Error {
   case failedToSelect(id: String)
 }
 
+@MainActor
 final public class InputSourceController {
   public init() { }
 
