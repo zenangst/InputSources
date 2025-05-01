@@ -17,6 +17,7 @@ final public class InputSourceController {
 
   public func fetchInputSources(includeAllInstalled: Bool) -> [InputSource] {
     let sourceList = TISCreateInputSourceList([:] as CFDictionary, includeAllInstalled)
+    defer { sourceList?.release() }
     guard let sources = sourceList?.takeUnretainedValue() as? [TISInputSource] else { return [] }
     return sources.compactMap { try? InputSource(source: $0) }
   }
